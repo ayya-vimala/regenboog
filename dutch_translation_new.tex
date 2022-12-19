@@ -16,19 +16,14 @@
 \usepackage{soulutf8}
 \usepackage{marginnote}
 \usepackage[english,main=dutch]{babel}
-\usepackage{graphicx}
-
+\usepackage[document]{ragged2e}
+\usepackage{xcolor}
 
 \graphicspath{ {./images/} }
-\renewcommand*{\marginfont}{\SkolarLight}
 
 %this snippet of code is a bit of a hack to allow line break after em-dash (http://tex.stackexchange.com/questions/62800/lualatex-and-line-breaks-after-em-dashes)
 \catcode`\—=13
 \protected\def—{\unskip\textemdash\allowbreak}
-
-%\usepackage{pagegrid}
-%PACKAGES%
-%\pagegridsetup{top-left, step=3.435in}
 
 %TABLE OF CONTENTS%
 \renewcommand*{\cfttoctitlefont}{\Secfont\Large}%use tocloft
@@ -40,29 +35,28 @@
 %LINESPACE%
 
 %FONTS% These are the normal SC fonts. We have a ``light'' skolar, too. 
-\setmainfont[Numbers=OldStyle]{Alegreya Sans}
-\setsansfont[Scale = MatchLowercase]{Source Sans Pro}
-\setmonofont{Source Code Pro}
-% \newfontfamily\SkolarLight{Alegreya Sans SC Light}
+\setmainfont[Numbers=OldStyle]{Alegreya HT Pro}
+\setsansfont[Scale = MatchLowercase]{Alegreya Sans}
+\setmonofont{Alegreya HT Pro}
 
 \newfontfamily\Chapfont[ItalicFont=Alegreya Sans Italic]{Alegreya Sans}
 \chapterfont{\Chapfont\LARGE\centering\mdseries\setstretch{1}}
 \newfontfamily\Secfont[Numbers=OldStyle]{Alegreya Sans Medium}
 \sectionfont{\Secfont\mdseries\large\setstretch{1}}
 
-
-%HEADINGS%
+\hyphenpenalty=5000
 
 %HEADER% 
-%\usepackage{ textcase}
 \setlength{\headheight}{15pt}
-%\pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
 
 %HANGING LEFT%
 \newcommand*{\vleftofline}[1]{\leavevmode\llap{#1}}
 %HANGINGLEFT%
+
+\definecolor{light-gray}{gray}{0.9}
+\renewcommand\fbox{\fcolorbox{darkgray}{light-gray}}
 
 %WIDOWS & ORPHANS% 
 \widowpenalty=10000
@@ -81,14 +75,11 @@
 \date{}
 \begin{document}
 
-
 \frontmatter
-%\pagestyle{fancy}
-
 
 \newgeometry{margin=0px}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \makebox[0pt]{%
     \includegraphics[width=\paperwidth]{front}}
@@ -119,18 +110,18 @@
 \vfill
 \end{center}
 
- \newpage
+\newpage
+\thispagestyle{empty}
+\mbox
 
-%\newpage
+\newpage
+\thispagestyle{empty}
+
 \tableofcontents
 \markboth{}{}
 
-\thispagestyle{empty}
-
 \newpage
-
 \thispagestyle{empty}
-
 
 \begin{center}\end{center}
 \begin{center}
@@ -140,13 +131,10 @@
 \textit{\large Moge iedereen gelukkig zijn}
 
 \vfill
-
 \end{center}
 
-
-
 \mainmatter
-
+\setlength{\parindent}{15pt}
 \chapter*{Verwelkom de regenboog}
 \addcontentsline{toc}{chapter}{Verwelkom de regenboog}
 \markboth{Verwelkom de regenboog}{Verwelkom de regenboog}
@@ -156,7 +144,7 @@ De boeddhistische LGBTQIA+ gemeenschap Rainbodhi heeft dit boekje gemaakt om  te
 \bigskip
 
 \begin{quote}
-\textit{Samen kunnen we onze boeddhistische centra veiliger en meer inclusief maken voor de regenboog gemeenschap}
+\textit{Samen kunnen we onze boeddhistische centra veiliger en meer inclusief maken voor de regenboog gemeenschap.}
 \end{quote}
 
 \bigskip
@@ -164,22 +152,23 @@ De boeddhistische LGBTQIA+ gemeenschap Rainbodhi heeft dit boekje gemaakt om  te
 \section*{Het regenboog acroniem}
 \addcontentsline{toc}{section}{Het regenboog acroniem}
 
-
-%\pagestyle{fancy}
-
 Het ‘LGBTQIA+’-acroniem staat voor lesbisch, gay (homo), biseksueel transgender, queer, intersekse en aseksueel. Het ‘+’ teken staat voor mogelijke andere identiteiten. We noemen dit het regenboog acroniem omdat de gemeenschap bestaat uit vele verschillende groepen, net als een regenboog bestaat uit vele verschillende kleuren. 
+
 LGBTQIA+ beslaat een breed scala aan identiteiten. Denk aan fysieke kenmerken, seksuele geaardheid en genderidentiteiten. Deze groepen verschillen onderling behoorlijk, maar kunnen elkaar ook overlappen. Lesbisch, homoseksueel en biseksueel verwijst naar seksuele geaardheid; transgender verwijst naar een genderidentiteit; queer verwijst naar zowel genderidentiteit als seksualiteit; intersekse verwijst naar mensen geboren met zowel vrouwelijke als mannelijke fysieke kenmerken en aseksueel verwijst naar de afwezigheid van seksuele aantrekkingskracht. Combinaties van deze verschillende aspecten komen ook voor. 
-Hoewel LGBTQIA+-identiteiten onderling verschillend zijn hebben ze allemaal te maken met dezelfde uitdagingen, zoals vooroordelen, discriminatie, juridische barrieres en geweld - alleen doordat ze zichzelf zijn.
+
+Hoewel LGBTQIA+-identiteiten onderling verschillend zijn hebben ze allemaal te maken met dezelfde uitdagingen, zoals vooroordelen, discriminatie, juridische barrieres en geweld—alleen doordat ze zichzelf zijn.
 
 \phantomsection
 \section*{Samen werken aan verandering}
 \addcontentsline{toc}{section}{Samen werken aan verandering}
 
 LGBTQIA+’ers worden vaak geconfronteerd met afwijzing en onderdrukking door de samenleving en door religieuze gemeenschappen. De Boeddha  sprak zich vaak uit tegen discriminatie en zei dat alle levende wezens liefde verdienen, zonder uitzondering. Aangezien iedereen in staat is om verlichting te bereiken, zou het goed zijn als we niemand uitsluiten van onze boeddhistische gemeenschappen.  
-Het is best mogelijk dat we ons niet eens realiseren dat onze boeddhistische organisaties, tempels en retraitecentra soms onwelkom aanvoelen voor LGBTQIA+’ers. Individuën begrijpen mogelijk niet dat hun acties en woorden schade kunnen brengen aan LGBTQIA+’ers. Organisaties zien misschien niet in hoe hun manier van doen en spreken LGBTQIA+’ers kwetst of uitsluit.  
+
+Het is best mogelijk dat we ons niet eens realiseren dat onze boeddhistische organisaties, tempels en retraitecentra soms onwelkom aanvoelen voor LGBTQIA+’ers. Individuen begrijpen mogelijk niet dat hun acties en woorden schade kunnen brengen aan LGBTQIA+’ers. Organisaties zien misschien niet in hoe hun manier van doen en spreken LGBTQIA+’ers kwetst of uitsluit.  
+
 Het goede nieuws is dat dit al aan het veranderen is en dat wij mee kunnen helpen.
 
-%\section*{\textit{Zolang individuën of boeddhistische organisaties zich schuldig maken aan homofobie, bifobie, transfobie of interfobie, houden zij haat, geweld en misbruik in stand.}}
+%\section*{\textit{Zolang individuen of boeddhistische organisaties zich schuldig maken aan homofobie, bifobie, transfobie of interfobie, houden zij haat, geweld en misbruik in stand.}}
 
 %\section*{\textit{Als we inzicht krijgen in hoe er meer gastvrijheid en inclusiviteit kan zijn voor LGBTQIA+’ers, kunnen we echt liefdevolle vriendelijkheid beoefenen naar iedereen in onze gemeenschappen.}}
 
@@ -190,24 +179,25 @@ Het goede nieuws is dat dit al aan het veranderen is en dat wij mee kunnen helpe
 Het is belangrijk om echt te luisteren naar LGBTQIA+-boeddhisten om te weten wat er speelt. Recent onderzoek, gesponsord door Rainbodhi en uitgevoerd door Dr. Stephen Kerry van de Charles Darwin Universiteit, wees uit dat Australische boeddhistische gemeenschappen best een uitdaging zijn voor LGBTQIA+-boeddhisten. Over hun eigen boeddhistische centra meldden respondenten:
 
 \begin{itemize}
+  \setlength\itemsep{0em}
   \item 61\% vond dat LGBTQIA+’ers verzwegen werden in boeddhistische centra en hun problemen werden genegeerd
   \item 55\% was soms terughoudend om hun LGBTQIA+-identiteit te onthullen
   \item 54\% had seksisme gezien of gehoord
   \item 37\% had homofobie gezien of gehoord
   \item 26\% had transfobie gezien of gehoord
   \item 26\% had racisme gezien of gehoord
-  \item 16\% had te horen gekregen dat hun LGBTQIA+-identiteit niet overeenkomt met de boeddhistische leer
+  \item 16\% had te horen gekregen dat hun LGBTQIA+-identiteit niet overeenkomt met de boeddhistische leer.
 \end{itemize}
 
 Deze resultaten laten zien dat boeddhistische centra nog niet altijd een veilige plek zijn voor LGBTQIA+-boeddhisten. Het erkennen dat er vooroordelen en discriminatie bestaan binnen de boeddhistische centra is een belangrijke eerste stap om het nodige te kunnen veranderen qua veiligheid en inclusie.
 
 \phantomsection
-\section*{Boeddhisme heeft een LGBTQIA+-geschiedenis (en toekomst)}
-\addcontentsline{toc}{section}{Boeddhisme heeft een LGBTQIA+-gechiedenis (en toekomst)}
+\section*{Boeddhisme heeft LGBTQIA+-geschiedenis (en toekomst)}
+\addcontentsline{toc}{section}{Boeddhisme heeft LGBTQIA+-gechiedenis (en toekomst)}
 
 Er zijn in het verleden altijd queer, trans en intersekse mensen geweest en onder de LGBTQIA+’ers zijn ook spirituele mensen, dus is het niet verwonderlijk dat het boeddhisme een LGBTQIA+-geschiedenis heeft.
 
-In oude boeddhistische teksten wordt zonder enig gevoel voor moreel oordeel of negativiteit gesproken over aantrekking tot, en seksualiteit met het zelfde geslacht. Er zijn ook verslagen van kloosterlingen die wisselden tussen het ene en het andere gender. De oude Indiase samenleving erkende een categorie mensen die noch als man, noch als vrouw werd gezien (deze zouden we tegenwoordig wellicht transgender of het derde gender noemen) en noemden ook een andere categorie mensen met zowel mannelijke als vrouwelijke geslachtskenmerken (die wij wellicht intersekse zouden nomen). In de boeddhistische geschiedenis werden deze groepen al sociaal benadeeld en gestigmatiseerd. Voor sommige groepen duurt deze discriminatie tot op de dag van vandaag nog voort.
+In oude boeddhistische teksten wordt zonder enig gevoel voor moreel oordeel of negativiteit gesproken over aantrekking tot, en seksualiteit met het zelfde geslacht. Er zijn ook verslagen van kloosterlingen die wisselden tussen het ene en het andere gender. De oude Indiase samenleving erkende een categorie mensen die noch als man, noch als vrouw werd gezien (deze zouden we tegenwoordig wellicht transgender of het derde gender noemen) en noemden ook een andere categorie mensen met zowel mannelijke als vrouwelijke geslachtskenmerken (die wij wellicht intersekse zouden noemen). In de boeddhistische geschiedenis werden deze groepen al sociaal benadeeld en gestigmatiseerd. Voor sommige groepen duurt deze discriminatie tot op de dag van vandaag nog voort.
 
 \subsubsection*{Pride in het boeddhisme}
 
@@ -220,18 +210,22 @@ LGBTQIA+'ers hebben als kloosterlingen, lekenvolgers, leraren en geleerden hun b
 \chapter*{Wees een spirituele vriend van LGBTQIA+-boeddhisten}
 \addcontentsline{toc}{chapter}{Wees een spirituele vriend van LGBTQIA+-boeddhisten}
 \markboth{Verwelkom de regenboog}{Wees een spirituele vriend van LGBTQIA+-boeddhisten}
-%\textit{\large Ware vriendschap beslaat het geheel van het spirituele pad.}
 
-Een spirituele vriend zijn is een belangrijk onderdeel van het boeddhisme. Door een LGBTQIA+ bondgenoot te zijn, kun je anderen een veilig en welkom gevoel geven.
+\begin{quote}
+\textit{Ware vriendschap beslaat het geheel van het spirituele pad.}
+\end{quote}
 
 \phantomsection
 \section*{Wees een bondgenoot}
 \addcontentsline{toc}{section}{Wees een bondgenoot}
 
-Een  bondgenoot steunt de burgerrechten van LGBTQIA+’ers en is actief in het bestrijden van homofobie, bifobie, transfobie en interfobie. Bondgenoten zijn vaak heteroseksueel en/of cisgender (mensen die zich identificeren met het geslacht dat ze bij geboorte toegewezen kregen). Bondgenoten beseffen dat ze het voorrecht hebben niet tegen dezelfde sociale hindernissen aan hoeven te lopen als LGBTQIA+’ers en dus gebruiken ze deze voorrechtpositie om discriminatie van deze gemeenschap tegen te gaan. 
+Een spirituele vriend zijn is een belangrijk onderdeel van het boeddhisme. Door een LGBTQIA+ bondgenoot te zijn, kun je anderen een veilig en welkom gevoel geven.
+
+Een  bondgenoot steunt de burgerrechten van LGBTQIA+’ers en is actief in het bestrijden van homofobie, bifobie, transfobie en interfobie. Bondgenoten zijn vaak heteroseksueel en/of cisgender (mensen die zich identificeren met het geslacht dat ze bij geboorte toegewezen kregen). Bondgenoten beseffen dat ze het voorrecht hebben dat ze niet tegen dezelfde sociale hindernissen aan hoeven te lopen als LGBTQIA+’ers en dus gebruiken ze deze voorrechtpositie om discriminatie van deze gemeenschap tegen te gaan. 
+
 Een bondgenoot kan iemand zijn die zich identificeert met de LGBTQIA+-gemeenschap en een groep ondersteunt waarmee die zichzelf niet identificeert. Een cisgender homoseksuele man kan bijvoorbeeld bondgenoot zijn voor transgender mensen. Een intersekse person kan opkomen voor de rechten van mensen die op hetzelfde geslacht vallen.
 
-Bondgenoten nemen de taak op zich om uit te leggen tegen welke problemen LGBTQIA+’ers in de wereld aan lopen. Om een goede bondgenoot te zijn, is het ten eerste belangrijk om te luisteren naar LGBTQIA+’ers en te leren over hun uiteenlopende ervaringen. Dit betekent basiskennis, zoals wat de letters in het acroniem betekenen, het verschil tussen seksualiteit en gender, hoe de problemen van transgender mensen verschillen van die van LGB’ers, en welke mensenrechter intersekse mensen willen verwerven.
+Bondgenoten nemen de taak op zich om uit te leggen tegen welke problemen LGBTQIA+’ers in de wereld aan lopen. Om een goede bondgenoot te zijn, is het ten eerste belangrijk om te luisteren naar LGBTQIA+’ers en te leren over hun uiteenlopende ervaringen. Dit betekent basiskennis, zoals wat de letters in het acroniem betekenen, het verschil tussen seksualiteit en gender, hoe de problemen van transgender mensen verschillen van die van LGB’ers, en welke mensenrechten intersekse mensen willen verwerven.
 
 \begin{quote}
 \textit{Een bondgenoot zijn is een bewijs van vriendschap en mededogen}
@@ -241,13 +235,13 @@ Bondgenoten nemen de taak op zich om uit te leggen tegen welke problemen LGBTQIA
 \section*{Inclusie bevorderen}
 \addcontentsline{toc}{section}{Inclusie bevorderen}
 
-Het is goed om te beseffen dat er LGBTQIA+’ers in de boeddhistische gemeenschappen zijn. Je kunt er nooit vanuit gaan dat iedereen hetero is, of dat we door naar iemand te kijken meteen weten van welk geslacht/gender iemand is of welke voornaamwoorden gepast zijn. Erkennen dat ook LGBTQIA+’ers onze tempels, retraites en centra bezoeken is de eerste stap om meer inclusief te zijn.
+Het is goed om te beseffen dat er LGBTQIA+’ers in boeddhistische gemeenschappen zijn. Je kunt er nooit vanuit gaan dat iedereen hetero is, of dat we door naar iemand te kijken meteen weten van welk geslacht/gender iemand is of welke voornaamwoorden gepast zijn. Erkennen dat ook LGBTQIA+’ers onze tempels, retraites en centra bezoeken is de eerste stap om meer inclusief te zijn.
 
-LGBTQIA+’ers hebben zich vaak gedwongen gevoeld om onzichtbaar te blijven in boeddhistische gemeenschappen en hadden vaak het gevoel dat hun specifieke behoeften niet werden gezien, laat staan dat erin werd voorzien.  Het is niet voor iedereen makkelijk om open te zijn over de identiteit vanwege de angst om afgewezen te worden. Het kan ongemakkelijk voelen om te praten over kwesties die hen aangaan. Het zou kunnen dat ze zich onzeker voelen over hun veiligheid binnen de boeddhistische gemeenschap doordat ze in het verleden een slechte ervaring hebben gehad bij een ander boeddhistisch centrum of religie in het algemeen. We kunnen onze goede wil en spirituele vriendschap tonen door LGBTQIA+’ers te laten weten dat ze welkom zijn in onze gemeenschappen.
+LGBTQIA+’ers hebben zich vaak gedwongen gevoeld om onzichtbaar te blijven in boeddhistische gemeenschappen en hadden vaak het gevoel dat hun specifieke behoeften niet werden gezien, laat staan dat erin werd voorzien.  Het is niet voor iedereen makkelijk om open te zijn over hun identiteit vanwege de angst om afgewezen te worden. Het kan ongemakkelijk voelen om te praten over kwesties die hen aangaan. Het zou kunnen dat ze zich onzeker voelen over hun veiligheid binnen de boeddhistische gemeenschap doordat ze in het verleden een slechte ervaring hebben gehad bij een ander boeddhistisch centrum of religie in het algemeen. We kunnen onze goede wil en spirituele vriendschap tonen door LGBTQIA+’ers te laten weten dat ze welkom zijn in onze gemeenschappen.
 
 \subsubsection*{Inclusie betekent veranderingen aanbrengen}
 
-Het verwelkomen van LGBTQIA+ers’ is een mooi begin, maar echte inclusive betekent het wegnemen van bestaande barrieres die mensen uitsluiten. Includeren vraagt om werkelijk inzicht in het perspectief van LGBTQIA+’ers. In de praktijk kan dit betekenen dat het nodig is om de administratie onder de loep te nemen. Het aanpassen van lidmaatschaps- en registratieformulieren bijvoorbeeld, waar vaak alleen mannelijke of vrouwelijke opties op staan. of het maken van fysieke veranderingen, zoals het aanbieden van genderneutrale toiletten en verblijfsopties.  Verandering kan ook op persoonlijk niveau: door meer bewust om te gaan met woordkeuze en welke vragen nodig zijn op formulieren zodat LGBTQIA+’ers niet het gevoel krijgen er niet bij te horen.
+Het verwelkomen van LGBTQIA+ers’ is een mooi begin, maar echte inclusie betekent het wegnemen van bestaande barrieres die mensen uitsluiten. Includeren vraagt om werkelijk inzicht in het perspectief van LGBTQIA+’ers. In de praktijk kan dit betekenen dat het nodig is om de administratie onder de loep te nemen. Het aanpassen van lidmaatschaps- en registratieformulieren bijvoorbeeld, waar vaak alleen mannelijke of vrouwelijke opties op staan. of het maken van fysieke veranderingen, zoals het aanbieden van genderneutrale toiletten en verblijfsopties.  Verandering kan ook op persoonlijk niveau: door meer bewust om te gaan met woordkeuze en welke vragen nodig zijn op formulieren zodat LGBTQIA+’ers niet het gevoel krijgen er niet bij te horen.
 
 Boeddhistische centra zouden een beleid moeten hebben over inclusiviteit zodat iedereen zich welkom kan voelen. Om dit inclusieve beleid veilig te stellen moeten de procedures openbaar zijn zodat er op toegezien kan worden dat iedereen veilig en welkom is. Het moet bekend zijn welke wegen bewandeld kunnen worden om een eventueel probleem op te kunnen lossen.
 
@@ -258,11 +252,12 @@ Boeddhistische centra zouden een beleid moeten hebben over inclusiviteit zodat i
 Er zijn veel manieren om de regenbooggemeenschap te steunen als boeddhist en boeddhistische organisatie. Een positieve houding ten aanzien van diversiteit is een uitgesproken kans om “empathische vreugde” te voelen en het geluk van anderen te bevorderen.
 
 \begin{itemize}
-  \item Doe met je hele organisatie een LGBTQIA+ diversiteits- en inclusietraining. Moedig andere boeddhistische organisaties om hetzelfde te doen.
-  \item Hang posters op en leg stickers neer in je centrum om je gemeenschap duidelijk te laten zien dat je centrum inclusie van LGBTQIA+ steunt. Zet een ‘veilige plek regenboog symbool’ op de website en het publiciteitsmateriaal.
-  \item Vertel op lezingen en bij evenementen dat LGBTQIA+’ers welkom zijn en ondersteunt worden.
+  \setlength\itemsep{0em}
+  \item Doe met je hele organisatie een LGBTQIA+ diversiteits- en inclusietraining. Moedig andere boeddhistische organisaties aan om hetzelfde te doen.
+  \item Hang posters op en leg stickers neer in je centrum om je gemeenschap duidelijk te laten zien dat je centrum inclusie van LGBTQIA+ steunt. Zet een ‘veilige plek’-regenboog symbool op de website en het publiciteitsmateriaal.
+  \item Vertel op lezingen en bij evenementen dat LGBTQIA+’ers welkom zijn en ondersteund worden.
   \item Organiseer op je lokatie een ‘Pride-event’ voor LGBTQIA+’ers en bondgenoten.
-  \item Nodig LGBTQIA+’ers uit om in alle lagen mee te werken, inclusief lesgeven, administratie en vrijwilligerswerk. \\
+  \item Nodig LGBTQIA+’ers uit om in alle lagen mee te werken, inclusief lesgeven, administratie en vrijwilligerswerk.
   \item Maak openbaar beschikbare veiligheidsprocedures die mensen in staat stellen om kwesties en zorgen over homofobie en transfobie te uiten, en zorg dat hier navolging en resolutie op komt.
 \end{itemize}
 
@@ -270,10 +265,14 @@ Er zijn veel manieren om de regenbooggemeenschap te steunen als boeddhist en boe
 \addcontentsline{toc}{chapter}{Obstakels voor LGBTQIA+ inclusie}
 \markboth{Verwelkom de regenboog}{Obstakels voor LGBTQIA+ inclusie}
 
-De opzet en exploitatie van boeddhistische organisaties kan van grote invloed zijn op het buitensluiten van LGBTQIA+’ers. Een analogie: fysieke obstakels , zoals trappen kunnen rolstoelgebruikers uitsluiten, dus hebben gebouwen hellingen en liften om ze binnen te laten. Op dezelfde manier zijn er administratieve, fysieke en conceptuele drempels die LGBTQIA+’ers uitsluiten. Mogelijk zijn we ons niet eens bewust van deze obstakels, maar ze bestaan en hebben werkelijke gevolgen.
+\begin{quote}
+\textit{Hetzij boeddhistische individuen en organisaties actief inclusief zijn, zullen LGBTQIA+’ers nog steeds uitgesloten worden.}
+\end{quote}
+
+De opzet en exploitatie van boeddhistische organisaties kan van grote invloed zijn op het buitensluiten van LGBTQIA+’ers. Een analogie: fysieke obstakels, zoals trappen, kunnen rolstoelgebruikers uitsluiten, dus hebben gebouwen hellingen en liften om ze binnen te laten. Op dezelfde manier zijn er administratieve, fysieke en conceptuele drempels die LGBTQIA+’ers uitsluiten. Mogelijk zijn we ons niet eens bewust van deze obstakels, maar ze bestaan en hebben werkelijke gevolgen.
 
 \begin{quote}
-\textit{We kunnen helpen om obstakels weg te nemen die LGBTQIA+’ers uitsluiten, en zo veiligere en meer inclusieve boeddhistische gemeenschappen creeren.}
+\textit{We kunnen helpen om obstakels weg te nemen die \mbox{LGBTQIA+’ers} uitsluiten, en zo veiligere en meer inclusieve boeddhistische gemeenschappen creeren.}
 \end{quote}
 
 \phantomsection
@@ -282,7 +281,7 @@ De opzet en exploitatie van boeddhistische organisaties kan van grote invloed zi
 
 Op registratieformulieren en online databases kan vaak alleen uit mannelijke of vrouwelijke opties gekozen worden.  Dit sluit veel transgender, niet-binaire en ook sommige intersekse mensen uit die zich liever identificeren als “noch man noch vrouw”. Het hebben van alleen binaire opties geeft deze mensen al voordat ze zich voor een retraite of nieuwsbrief hebben opgegeven het idee dat ze vergeten zijn of niet welkom.
 
-Het is meer inclusief om een optie ‘overig’ toe te voegen aan formulieren waarin naar geslacht wordt gevraagd. Dus behalve een “dhr”, “mevr”, ook een optie “mx” of “n.v.t.” of “anders”. De naam en het gender dat sommigen in het dagelijks leven gebruiken is soms niet hetzelfde als wat in de officiele papieren staat vermeld. Voeg opties toe voor de roepnaam en vraag welke voornaamwoorden ze het liefst gebruiken. Overweeg ook of het wel nodig is om gender en aanhef te weten. Op sommige formulieren is deze informatie namelijk niet ter zake doende en nutteloos.
+Het is meer inclusief om een optie ‘overig’ toe te voegen aan formulieren waarin naar geslacht wordt gevraagd. Dus behalve een “dhr”, “mevr”, ook een optie “mx” of “n.v.t.” of “anders”. De naam en het gender die sommigen in het dagelijks leven gebruiken is soms niet hetzelfde als wat in de officiele papieren staat vermeld. Voeg opties toe voor de roepnaam en vraag welke voornaamwoorden ze het liefst gebruiken. Overweeg ook of het wel nodig is om gender en aanhef te weten. Op sommige formulieren is deze informatie namelijk niet ter zake doende en nutteloos.
 
 \phantomsection
 \section*{Fysieke obstakels die uitsluiten}
@@ -290,7 +289,9 @@ Het is meer inclusief om een optie ‘overig’ toe te voegen aan formulieren wa
 
 \subsubsection*{Gender-gescheiden zitplaatsen}
 
-Sommige boeddhistische centra hebben gendergebonden zitgebieden in meditatiezalen, eetzalen en andere ruimtes. Soms kan dit zelfs een hierarchische indeling zijn, met vrouwen die achter mannen zitten. Gender-gescheiden openbare ruimtes werken simpelweg niet voor iedereen en kunnen een veilig gevoel ontnemen. Sommige transmensen krijgen door een gendergerelateerde ruimte ongewenst de aandacht op zich gevestigd en voelen hierdoor een angst om afgewezen te worden. Het kan stress opleveren voor non-binaire mensen als ze gedwongen worden om een beslissing te nemen over de plek waar ze zouden moeten gaan zitten, zeker als hun gender niet onmiddellijk herkenbaar is. Andere mensen houden niet van gendersegregatie omdat ze het ouderwets en onnodig vinden.
+Sommige boeddhistische centra hebben gendergebonden zitgebieden in meditatiezalen, eetzalen en andere ruimtes. Soms kan dit zelfs een hierarchische indeling zijn, met vrouwen die achter mannen zitten. Gender-gescheiden openbare ruimtes werken simpelweg niet voor iedereen en kunnen een veilig gevoel ontnemen. 
+
+Sommige transmensen krijgen door een gendergerelateerde ruimte ongewenst de aandacht op zich gevestigd en voelen hierdoor een angst om afgewezen te worden. Het kan stress opleveren voor non-binaire mensen als ze gedwongen worden om een beslissing te nemen over de plek waar ze zouden moeten gaan zitten, zeker als hun gender niet onmiddellijk herkenbaar is. Andere mensen houden niet van gendersegregatie omdat ze het ouderwets en onnodig vinden.
 
 \subsubsection*{Toiletten}
 
@@ -304,20 +305,19 @@ Alle mensen, of ze nou cisgender of transgender of non-binair zijn, zouden de mo
 
 Hoewel er altijd behoefte zal blijven aan accomodatie voor specifieke genders, bevestigt dat voor veel transgender en non-binaire mensen niet het bestaan van andere genderidentiteiten, of dat sommige mensen zich niet identificeren als mannelijk of vrouwelijk. Door meer slaapzalen aan te bieden is het retraitecentrum meer inclusief en biedt het meer veilige alternatieven: vrouwenzalen, mannenzalen, gemengde zalen. Door op het inschrijfformulier deze opties op te sommen kunnen mensen kiezen wat hen het beste past.
 
-Sommige mensen van hetzelfde gender willen wellicht naar een slaapzaal voor alle genders omdat een verblijf in een slaapzaal van hetzelfde geslacht een te grote uitdaging kan zijn. Kamergenoten kunnen er namelijk voor zorgen dat ze zich niet welkom voelen omdat ze queer zijn. of er kan afleiding ontstaan door verlangens.
+Sommige mensen van hetzelfde gender willen wellicht naar een slaapzaal voor alle genders omdat een verblijf in een slaapzaal van hetzelfde geslacht een te grote uitdaging kan zijn. Kamergenoten kunnen er namelijk voor zorgen dat ze zich niet welkom voelen omdat ze queer zijn, of er kan afleiding ontstaan door verlangens.
 
 Een extra slaapzaal voor “alle genders” geeft trans, non-binaire en gays een extra keuze om dat te kiezen wat voor hen het beste is. Een andere mogelijkheid is dat LGBTQIA+ers een eenpersoonskamer als voorkeur kunnen opgeven om de retraite-ervaring zo comfortabel mogelijk te laten zijn. 
 
 Het verwelkomen van LGBTQIA+’ers begint dus lang voordat ze op de retraitelokatie aankomen. Je kunt dit bijvoorbeeld op de volgende manieren doen:
 
 \begin{itemize}
+  \setlength\itemsep{0em}
   \item Zorg dat op de publicaties staat dat het een veilige en inclusieve ruimte is voor LGBTQIA+’ers.
   \item Maak registratieformulieren met opties voor verschillende genders, voornaamwoorden en accomodatievoorkeuren.
   \item Zorg dat retraitemanagers en vrijwilligers zich bewust zijn van inclusieve omgang met LGBTQIA+’s.
   \item Zorg voor “alle gender” toiletten en bied meerdere accommodaite-opties.
   \item Herinner iedereen tijdens de orientatiesessie aan het begin van de retraite eraan dat het een inclusieve en gastvrije ruimte is voor iedereen, inclusief LGBTQIA+’ers.
-  \item 26\% had racisme gezien of gehoord
-  \item 16\% had te horen gekregen dat hun LGBTQIA+-identiteit niet overeenkomt met de boeddhistische leer
 \end{itemize}
 
 \chapter*{Kwetsend taalgebruik}
@@ -333,38 +333,42 @@ Het verwelkomen van LGBTQIA+’ers begint dus lang voordat ze op de retraiteloka
 \addcontentsline{toc}{section}{Woorden die pijn doen}
 
 “Juist spreken” is een belangrijk boeddhistisch concept. Onze woorden hebben consequenties. Vriendelijke woorden veroorzaken geen schade en daarmee tonen we respect. Woorden kunnen mensen ook kwetsen en het gevoel geven niet welkom te zijn. Respectloos taalgebruik, flauwe grappen en indringende vragen stroken niet met juist spreken en kunnen het moeilijk maken voor LGBTQIA+’ers om een onderdeel te zijn van boeddhistische organisaties.
-	Hier onder lees je wat belangrijke tips bij het spreken met en over LGBTQIA+’ers. %reformat add tab
+
+Hieronder een aantal belangrijke tips bij het spreken met en over LGBTQIA+’ers.
 
 \subsubsection*{Respectvol taalgebruik}
 
 Wees altijd vriendelijk en gebruik bewust geen woorden die als kwetsend kunnen worden opgevat. Aanstootgevende taal kan ook ernstige juridische gevolgen hebben.
 
 \begin{itemize}
-  \item Vermijd verouderde termen als homoseksueel, transseksueel, travesties en hermafrodiet. Deze woorden hebben medische connotaties die LGBTQIA+’ers kunnen stigmatiseren.
+  \setlength\itemsep{0em}
+  \item Vermijd verouderde termen als homoseksueel, transseksueel, travestie en hermafrodiet. Deze woorden hebben medische connotaties die LGBTQIA+’ers kunnen stigmatiseren.
   \item Gebruik geen aanstootgevende woorden als homo, tranny, sissy, lady-boy, hij-zij, manwijf of ‘het’.
   \item Vermijd zinnen die denigrerend zijn zoals ‘dat is zo gay’ of ‘no homo’.
 \end{itemize}
 
 \subsubsection*{Taal die uitsluit}
 
-\begin{quote}
-\textit{Inclusieve taal maakt dat mensen zich welkom voelen, uitsluitende taal sluit mensen buiten}
-\end{quote}
-
 Bewust omgaan met taal is een goede manier om van boeddhistische gemeenschappen een plek te maken waar iedereen zich thuis voelt.  Hier zijn wat tips:
 
 \begin{itemize}
-  \item Vermijd binaire taal dat trans en non-binaire mensen uitsluit. Zeg in plaats van ‘dames en heren’ of ‘broeders en zusters’ gewoon: ‘hallo allemaal’ of ‘beste mensen’.
+  \setlength\itemsep{0em}
+  \item Vermijd binaire taal die trans en non-binaire mensen uitsluit. Zeg in plaats van ‘dames en heren’ of ‘broeders en zusters’ gewoon: ‘hallo allemaal’ of ‘beste mensen’.
   \item Vermijd gender exclusieve taal. Zeg eens ‘de gemiddelde persoon op straat’ in plaats van ’de gemiddelde man op straat’. En in plaats van ‘jongens’ kun je ‘mensen’ zeggen.
   \item Wees je bewust van het uitsluiten van mensen die op hetzelfde geslacht vallen. Zeg in plaats van ‘echtgenoten en echtgenotes’ gewoon ‘partners’. In plaats van het te hebben over ‘aantrekking tot het andere geslacht’ kun je het beter gewoon ‘aantrekking’ zeggen.
 \item Reduceer niemand op basis van hun lichaamsdelen of seksuele geaardheid. Onthoud dat iedereen een volwaardig persoon is en meer dan de som van deze zaken. Omschrijf iemand niet op basis van hun seksualiteit (“die homo daar”) of met hun medische geschiedenis (“die omgebouwde daar” of “zij is man-naar-vrouw”).
 \end{itemize}
+
+\begin{quote}
+\textit{Inclusieve taal maakt dat mensen zich welkom voelen, uitsluitende taal sluit mensen buiten}
+\end{quote}
 
 \subsubsection*{Ongepaste vragen}
 
 In een openbare setting indringende vragen stellen over iemands persoonlijke leven is altijd ongepast. Iemand ondervragen over hun geslachtsdelen, chirurgische ingrepen, seksuele geaardheid of hun seksleven is ongewenst omdat deze zaken voor iedereen erg privé zijn. Ongepaste vragen zijn onder andere: 
 
 \begin{itemize}
+  \setlength\itemsep{0em}
   \item Ben je een jongen of een meisje / man of vrouw?
   \item Heb je je een (geslachtsveranderende) operatie ondergaan?
   \item Hoe heette je voor de transitie?
@@ -379,6 +383,7 @@ In een openbare setting indringende vragen stellen over iemands persoonlijke lev
 Iemand een compliment geven omdat hij op een hetero of cisgender lijkt is beledigend omdat het klinkt alsof dat op de een of andere manier beter zou zijn dan LGBTQIA+. Deze ideeen zijn ook gebaseerd op stereotypen en erkennen de werkelijke diversiteit in de Maatschappij niet. Dubbelzinnige complimenten zijn onder andere: 
 
 \begin{itemize}
+  \setlength\itemsep{0em}
   \item Je komt helemaal niet gay op me over!
   \item Ik had niet kunnen raden dat je trans bent.
   \item Je bent behoorlijk gespierd voor een gay man.
@@ -406,11 +411,14 @@ Onthul niet zonder toestemming iemands seksuele voorkeur of gendergeschiedenis. 
 \addcontentsline{toc}{section}{Het belang van voornaamwoorden}
 
 We vinden het allemaal belangrijk om te worden erkend en gerespecteerd om wie we zijn.
-Voornaamwoorden verwijzen naar mensen, zoals ‘jij’, ‘wij’ en ‘hen’. Voornaamwoorden beschrijven ook het gender van mensen, zoals ‘zij’, ‘haar’ en ‘hun’ Het correct gebruik van voornaamwoorden is altijd waardevol en respectvol. We vinden het allemaal prettig als mensen ons aanspreken met de voornaamwoorden die bij ons passen. Dit geldt ook voor trans- en gender-diverse mensen. Voornaamwoorden maken deel uit van iemands identiteit, net zoals een naam dat doet. Het voornaamwoord dat iemand gebruikt om zichzelf te omschrijven weerspiegelt over het algemeen de genderidentiteit. Gender is een spectrum. Hoe mensen zich soms identificeren lijkt niet altijd te kloppen met hun uiterlijk of stemgeluid, dus mogen we er niet vanuit gaan dat iemands voornaamwoord gebaseerd is op iemands uiterlijk en stemgeluid. Het is beter om bij iemand op diskrete wijze te informeren, en vervolgens hun voornaamwoorden te gebruiken in gesprekken met de persoon of met andere mensen.
+
+Voornaamwoorden verwijzen naar mensen, zoals ‘jij’, ‘wij’ en ‘hen’. Voornaamwoorden beschrijven ook het gender van mensen, zoals ‘zij’, ‘haar’ en ‘hun’ Het correct gebruik van voornaamwoorden is altijd waardevol en respectvol. We vinden het allemaal prettig als mensen ons aanspreken met de voornaamwoorden die bij ons passen. Dit geldt ook voor trans- en gender-diverse mensen. 
+
+Voornaamwoorden maken deel uit van iemands identiteit, net zoals een naam dat doet. Het voornaamwoord dat iemand gebruikt om zichzelf te omschrijven weerspiegelt over het algemeen de genderidentiteit. Gender is een spectrum. Hoe mensen zich soms identificeren lijkt niet altijd te kloppen met hun uiterlijk of stemgeluid, dus mogen we er niet vanuit gaan dat iemands voornaamwoord gebaseerd is op iemands uiterlijk en stemgeluid. Het is beter om bij iemand op diskrete wijze te informeren, en vervolgens hun voornaamwoorden te gebruiken in gesprekken met die persoon of met andere mensen.
 
 \noindent\fbox{%
     \parbox{\textwidth}{%
-\textbf{‘Zij/hun/(van)hen’ voornaamwoorden}
+\textbf{‘Zij/hun/(van) hen’ voornaamwoorden}
 
 \medskip
 
@@ -418,19 +426,20 @@ In het Engels wordt ‘they/them/their’ gebruikt als een enkele persoon wordt 
     }%
 }
 
-
 \subsubsection*{Soorten voornaamwoorden}
 
-De gebruikelijke voornaamwoorden zijn: ‘zij/haar/(van)haar’ en ‘hij/ hem/(van)hem’. Sommige mensen hebben een identiteit die buiten de mannelijke/vrouwelijke binaire valt en zij gebruiken genderneutrale voornaamwoorden, zoals ‘zij/hun/(van)hen’. Andere mensen zullen ‘hij’ en ‘zij’ uitwisselbaar gebruiken om aan te geven dat hun gender fluide is. Sommige mensen geven er de voorkeur aan om alleen met hun voornaam genoemd te worden.
+De gebruikelijke voornaamwoorden zijn: ‘zij/haar/(van) haar’ en ‘hij/ hem/(van) hem’. Sommige mensen hebben een identiteit die buiten de mannelijke/vrouwelijke binaire valt en zij gebruiken genderneutrale voornaamwoorden, zoals ‘die/hun/(van) hen’. Andere mensen zullen ‘hij’ en ‘zij’ afwisselend gebruiken om aan te geven dat hun gender fluide is. Sommige mensen geven er de voorkeur aan om alleen met hun voornaam genoemd te worden.
 
 \subsubsection*{Voornaamwoorden correct gebruiken}
 
+We kunnen in boeddhistische centra het goede voorbeeld geven door inclusieve woorden te gebruiken. Zo maken we duidelijk dat het gebruik van de juiste voornaamwoorden belangrijk wordt gevonden. Als we dat doen zullen trans en genderdiverse mensen zich meer welkom, begrepen en geaccepteerd voelen.
+
 \begin{itemize}
-\item We kunnen in boeddhistische centra het goede voorbeeld geven door inclusieve woorden te gebruiken. Zo maken we duidelijk dat het gebruik van de juiste voornaamwoorden belangrijk wordt gevonden. Als we dat doen zullen trans en genderdiverse mensen zich meer welkom, begrepen en geaccepteerd voelen.
+\setlength\itemsep{0em}
 \item Stel jezelf voor met je voornaamwoorden; ‘Hoi, ik ben Bodhi. Ik gebruik ’zij/haar’ voornaamwoorden’. 
 \item Vraag beleefd en discreet welk voornaamwoord anderen gebruiken. ‘Hoi ik ben Lotus. Ik gebruik ’zij/haar’ voornaamwoorden. Hoe zal ik jou aanspreken?’ 
 \item Gebruik altijd de naam en het voornaamwoord dat ze zelf nu gebruiken, ook als je het over hun verleden hebt.
-\item Corrigeer anderen in je gemeenschap als ze iemand verkeerd hebben aangesproken of een verkeerde naam hebben gegeven. Zo help je hen het belang van een correct gebruik van voornaamwoorden.
+\item Corrigeer anderen in je gemeenschap als ze iemand verkeerd hebben aangesproken of een verkeerde naam hebben gegeven. Zo help je hen het belang van een correct gebruik van voornaamwoorden in te laten zien.
 \item Voeg je eigen voornaamwoorden en naam toe aan je e-mail handtekening, visitekaartje, docentenprofiel of biografie; bijvoorbeeld Mitra Lovegood (zij/haar), boekhoudafdeling.
 \end{itemize}
 
@@ -443,9 +452,9 @@ Onthoud dat niet iedereen zijn voornaamwoorden wil delen en dat niemand daartoe 
 Misgenderen is iemand omschrijven of aanspreken met woorden die niet passen bij hoe die persoon zich met eigen gender of lichaam indentificeert. 
 Het is elementaire beleefdheid om iemand op de gewenste manier aan te spreken. Misgenderd worden voelt onwaardig, afkeurend en respectloos. Het geeft mensen het gevoel er niet bij te horen. 
 
-Door simpelweg iemand te vragen naar hun voornaamwoorden toon je respect voor hun genderidentiteit. Totdat je zeker bent over welk voornaamwoord iemand gebruikt kun je de persoon genderneutraal aanspreken. Als het gender bekend is gebruik je het geprefereerde voornaamwoord. Zodra iemand zich voorstelt als vrouw of man laat je het neutrale voornaamwoord weer vallen.
+Door simpelweg iemand te vragen naar hun voornaamwoorden toon je respect voor hun genderidentiteit. Totdat je zeker bent welk voornaamwoord iemand gebruikt kun je die persoon genderneutraal aanspreken. Als het gender bekend is gebruik je het geprefereerde voornaamwoord. Zodra iemand zich voorstelt als vrouw of man laat je het neutrale voornaamwoord weer vallen.
 
-	Het is niet erg als je het fout doet. Iedereen vergist zich weleens. Bied je excuses aan na gebruik van het verkeerde voornaamwoord, zeg het goede voornaamwoord en stap er overheen zonder er een probleem van te maken. Als je pas later bedenkt dat je je hebt vergist, neem dan even diegene apart, verontschuldig je en ga weer over tot de orde van de dag.
+Het is niet erg als je het fout doet. Iedereen vergist zich wel eens. Bied je excuses aan na gebruik van het verkeerde voornaamwoord, zeg het goede voornaamwoord en stap er overheen zonder er een probleem van te maken. Als je pas later bedenkt dat je je hebt vergist, neem dan even de desbetreffende persoon apart, verontschuldig je en ga weer over tot de orde van de dag.
 
 \subsubsection*{Verkeerde naamgeving}
 
@@ -469,37 +478,40 @@ Degene die een retraite groep leidt kan ook in hun taalgebruik rekening houden m
 \section*{De pijnlijke realiteit van discriminatie}
 \addcontentsline{toc}{section}{De pijnlijke realiteit van discriminatie}
 
+\begin{quote}
+\textit{De opvattingen van mensen kunnen leiden tot vooroordelen en onverdraagzaamheid, discriminatie en onderdrukking, alsmede haat en geweld tegen LGBTQIA+ gemeenschappen.}
+\end{quote}
+
 Ondanks dat de meeste LGBTQIA+’ers een gezond en gelukkig leven leiden, blijkt uit onderzoek dat een onevenredig aantal van hen het zwaar heeft qua geestelijke gezondheid en een hoger risico op suicidaal gedrag vertoont. Dit is direct gerelateerd aan ervaringen met stigma, vooroordelen, discriminatie en misbruik vanwege het LGBTQIA+ zijn. 
 
-%\noindent\fbox{%
-%    \parbox{\textwidth}{%
-\subsubsection*{Discriminatie van LGBTQIA+’ers} 
+LGBTQIA+’ers worden over de hele wereld gepest, verbaal misbruikt en hebben te maken met geweldadige aanvallen. Deze pijnlijke feiten maken duidelijk hoe belangrijk het is om te blijven praten over discriminatie en vooroordelen, zodat er begrip komt voor de uitdagingen waar LGBTQIA+’ers tegen aanlopen, en we ruimtes kunnen creëren waar alle mensen zich gastvrij en welkom voelen.
+
+\noindent\fbox{%
+   \parbox{\textwidth}{%
+\textbf{Discriminatie van LGBTQIA+’ers} 
 
 \begin{itemize}
+\setlength\itemsep{0em}
 \item 72 landen zien consensuele seksuele handelingen tussen mannen als een misdaad.
 \item 44 landen zien  consensuele seksuele handelingen tussen vrouwen als een misdaad.
-\item 11 countries geven de doodstraf voor consensuele seks met hetzelfde geslacht.
-\item 15 countries zien gender identiteit van transgender mensen als een misdaad, onder wetten over ‘travestie’, ‘imitatie’ en ‘vermomming’.
+\item 11 landen geven de doodstraf voor consensuele seks met hetzelfde geslacht.
+\item 15 landen zien gender identiteit van transgender mensen als een misdaad en hebben wetten m.b.t. ‘travestie’, ‘imitatie’ en ‘vermomming’.
 \item Over de hele wereld zijn er intersekse mensen die lijden onder gedwongen medische ingrepen die hun mensenrechten en lichamelijke integriteit schenden.
 \end{itemize}
-%    }
-%}
-
-\medskip
-
-LGBTQIA+’ers worden over de hele wereld gepest, verbaal misbruikt en hebben te maken met geweldadige aanvallen. Deze pijnlijke feiten maken duidelijk hoe belangrijk het is om te blijven praten over discriminatie en vooroordelen, zodat er begrip komt voor de uitdagingen waar LGBTQIA+’ers tegen aanlopen, en we ruimtes kunnen maken waar alle mensen zich gastvrij en welkom voelen.
+   }
+}
 
 \phantomsection
 \section*{Een opmerking over niet-zelf}
 \addcontentsline{toc}{section}{Een opmerking over niet-zelf}
 
-Sommige boeddhisten beschuldigen LGBTQIA+’ers er ten onrechte van dat ze geobsedeerd zijn door hun identiteit of het vasthouden aan een idee van ‘zelf’. Ze wijzen op de boeddhistische leer van anatta (niet-zelf) en houden vol dat identiteit slechts een illusie is en dus niet bestaat. Ook wordt beweerd dat het focussen op een identiteit in strijd is met de boeddhistische leer en dat dit de oorzaak is van het lijden van LGBTQIA+’ers. 
+Sommige boeddhisten beschuldigen LGBTQIA+’ers er ten onrechte van dat ze geobsedeerd zijn door hun identiteit of het vasthouden aan een idee van ‘zelf’. Ze wijzen op de boeddhistische leer van \textit{anatta} (niet-zelf) en houden vol dat identiteit slechts een illusie is en dus niet bestaat. Ook wordt beweerd dat het focussen op een identiteit in strijd is met de boeddhistische leer en dat dit de oorzaak is van het lijden van LGBTQIA+’ers. 
 
-Het is echter belangrijk om te bedenken dat queer, trans en intersekse een fundamentele onderdelen zijn van het menszijn. Door te suggereren dat deze aspecten van een persoon op een of andere manier onecht of onbelangrijk zijn is een onjuiste mening en misbruik van de boeddhistische leer. Het ontkent de waarheid van doorgemaakte ervaringen en wist belangrijke delen van levens uit, zoals relaties, gemeenschappen of werk. Deze mening is eveneens schadelijk omdat het de bestaande discriminatie, vooroordelen en het geweld dat LGBTQIA+’ers elke dag ervaren deels ontkent. 
+Het is echter belangrijk om te bedenken dat het zijn van queer, trans of intersekse een fundamenteel onderdeel is van het menszijn. Door te suggereren dat deze aspecten van een persoon op één of andere manier onecht of onbelangrijk zijn is een onjuiste mening en misbruik van de boeddhistische leer. Het ontkent de waarheid van de ervaringen die iemand heeft doorgemaakt en wist belangrijke delen van hun leven uit, zoals relaties, gemeenschappen of werk. Deze mening is eveneens schadelijk omdat het de bestaande discriminatie, vooroordelen en het geweld dat LGBTQIA+’ers elke dag ervaren deels ontkent. 
 
-Sommige boeddhisten gebruiken het ‘niet-zelf’ concept om LGBTQIA+’ers de mond te snoeren en de zeer reëele pijn die ze voelen zo te ontkennen. LGBTQIA+’ers lijden vooral onder de houding die sommigen hebben ten aanzien van hun identiteit. LGBTQIA+ zijn is op zichzelf geen oorzaak van lijden net zo min als cisgender of hetero zijn dat is. LGBTQIA+’ers hebben het over identiteit omdat ze vaak sociaal beïnvloed worden door mensen met een discriminerende houding en willen veranderingen aanbrengen in die delen van de samenleving die schade aanrichten. Gender en seksualiteit zijn een belangrijk onderdeel van het menszijn en van de maatschappij. De diversiteit mag op handen worden gedragen in plaats van genegeerd of uitgewist te worden. 
+Sommige boeddhisten gebruiken het ‘niet-zelf’ concept om LGBTQIA+’ers de mond te snoeren en de zeer reëele pijn die ze voelen zo te ontkennen. LGBTQIA+’ers lijden vooral onder de houding die sommigen hebben ten aanzien van hun identiteit. LGBTQIA+ zijn is op zichzelf geen oorzaak van lijden net zo min als cisgender of hetero zijn dat is. LGBTQIA+’ers hebben het over identiteit omdat ze vaak sociaal beïnvloed worden door mensen met een discriminerende houding en ze willen veranderingen aanbrengen in die delen van de samenleving die schade aanrichten. Gender en seksualiteit zijn een belangrijk onderdeel van het menszijn en van de maatschappij. De diversiteit mag op handen worden gedragen in plaats van genegeerd of uitgewist te worden. 
 
-Daarom is het echt belangrijk dat boeddhisten nadenken over hoe er over ‘niet-zelf’ wordt gesproken met mensen die onderdrukt worden naar aanleiding van hun identiteit. Anders wordt het ‘niet-zelf’, in plaats van een nuttig hulpmiddel voor persoonlijke groei, een wapen dat anderen beschadigt. Deze ‘bewapende anatta’ kan aanvoelen als de zoveelste oneerlijke aanval op LGBTQIA+’ers.  
+Daarom is het echt belangrijk dat boeddhisten nadenken over hoe er over ‘niet-zelf’ wordt gesproken met mensen die onderdrukt worden naar aanleiding van hun identiteit. Anders wordt het ‘niet-zelf’, in plaats van een nuttig hulpmiddel voor persoonlijke groei, een wapen dat anderen beschadigt. Deze ‘bewapende \textit{anatta}’ kan aanvoelen als de zoveelste oneerlijke aanval op LGBTQIA+’ers.  
 
 \subsubsection*{Wie ben je?}
 
@@ -508,7 +520,7 @@ LGBTQIA+’ers ontvangen soms kritiek wanneer ze dingen willen bespreken die hen
 We kunnen ons afvragen:
 
 \begin{itemize}
-
+\setlength\itemsep{0em}
 \item Vink ik op formulieren altijd hetzelfde vakje voor mijn gender?
 \item Zou het me irriteren als iemand me met het verkeerde gender aanspreekt?
 \item Zou ik iemand corrigeren als ze mij met een verkeerde naam of titel aanspreken?
@@ -519,6 +531,7 @@ Als je hier positief op antwoordt betekent dit dat je geobsedeerd bent met je id
 Of we kunnen empathie ontwikkelen door na te denken over:
 
 \begin{itemize}
+\setlength\itemsep{0em}
 \item Hoe zou het voelen als mijn relatie door de regering strafbaar werd gesteld?
 \item Wat als ik mijn baan kon verliezen door mijn geaardheid of gender?
 \item Ben ik wel eens bang geweest voor een geweldadige aanval als ik iemand in het openbaar genegenheid wilde tonen?
@@ -552,7 +565,7 @@ Iedereen heeft een lichaam, gender identiteit en seksualiteit. Het is belangrijk
 
 \subsubsection*{Lichaams- en geslachtskenmerken}
 
-Elk lichaam is anders. Er zijn zoveel onderlinge verschillen in vorm en formaat en gelaatstrekken. Geslachtskenmerken verschillen onderling ook, zoals in fysieke kenmerken die horen bij lichaamsontwikkeling, hormoonregulatie en het voortplantingssysteem. Primaire geslachtskenmerken zijn geslachtsklieren, chromosomen, geslachtsorganen en hormonen. Secundaire geslachtskenmerken ontstaan in de puberteit en gaan over borstweefsel, stemhoogte, gezichts- en schaamhaar. ‘Geslachtskenmerken’ klinkt beter dan het ‘biologisch geslacht’ of termen als ‘biologisch mannelijk’ of ‘biologisch vrouwelijk’. Want lichaamsdelen op zich bepalen niet of je man of vrouw bent. Veel mensen hebben mogelijk geleerd dat er maar twee soorten lichamen zijn - mannelijk en vrouwelijk - maar eigenlijk bestaan er veel meer soorten lichamen.
+Elk lichaam is anders. Er zijn zoveel onderlinge verschillen in vorm en formaat en gelaatstrekken. Geslachtskenmerken verschillen onderling ook, zoals in fysieke kenmerken die horen bij lichaamsontwikkeling, hormoonregulatie en het voortplantingssysteem. Primaire geslachtskenmerken zijn geslachtsklieren, chromosomen, geslachtsorganen en hormonen. Secundaire geslachtskenmerken ontstaan in de puberteit en gaan over borstweefsel, stemhoogte, gezichts- en schaamhaar. ‘Geslachtskenmerken’ klinkt beter dan het ‘biologisch geslacht’ of termen als ‘biologisch mannelijk’ of ‘biologisch vrouwelijk’. Want lichaamsdelen op zich bepalen niet of je man of vrouw bent. Veel mensen hebben mogelijk geleerd dat er maar twee soorten lichamen zijn—mannelijk en vrouwelijk—maar eigenlijk bestaan er veel meer soorten lichamen.
 
 \subsubsection*{Lichaam en gender}
 
@@ -582,7 +595,7 @@ Seksuele geaardheid of seksualiteit geeft aan tot wie we ons wel of niet aangetr
 
 Intersekse is een overkoepelende term die wordt gebruikt om mensen te omschrijven met natuurlijke variaties die afwijken van gangbare ideeën over ‘vrouwelijke’ of ‘mannelijke’ lichamen.  Ongeveer 1,7\% van de mensen wordt geboren met intersekse kenmerken. Dat betreft een breed scala aan genitale, chromosomale, hormonale en andere fysieke kenmerken. Deze kenmerken kunnen prenataal al zichtbaar zijn of zich bij de geboorte pas aandoen, of zelfs pas zichtbaar worden rond de puberteit. Het kan ook nog later aan het licht komen, bijvoorbeeld bij het verwekken van een kind. Elke eigenschap heeft zijn eigen unieke kenmerken en uit zich in verschillende gradaties.  
 
-Veel intersekse mensen identificeren zich met het geslacht dat ze bij geboorte kregen toegewezen - simpelweg als man of vrouw. Anderen identificeren zich als “anders”. Sommige intersekse mensen verwerpen het geslacht dat ze bij geboorte kregen, maar zien zichzelf ook niet als transgender. Anderen identificeren zich als transgender of gender-divers.  
+Veel intersekse mensen identificeren zich met het geslacht dat ze bij geboorte kregen toegewezen—simpelweg als man of vrouw. Anderen identificeren zich als “anders”. Sommige intersekse mensen verwerpen het geslacht dat ze bij geboorte kregen, maar zien zichzelf ook niet als transgender. Anderen identificeren zich als transgender of gender-divers.  
 
 Intersekse mensen hebben net als niet-intersekse mensen een breed scala aan identiteiten. Sommigen willen bij de regenbooggemeenschap horen, anderen niet. Intersekse zijn gaat niet over genderidentiteit en is anders dan trans of non-binair zijn. Intersekse heeft ook niks te maken met seksuele geaardheid; intersekse mensen kunnen lesbisch, homoseksueel, bi of hetero zijn net als ieder ander.   
 
@@ -592,11 +605,14 @@ Intersekse mensen hebben net als niet-intersekse mensen een breed scala aan iden
 
 Trans en gender divers zijn overkoepelende termen om mensen te omschrijven die zich anders identificeren dan het gender dat hen bij de geboorte werd toegewezen. Trans mensen kunnen hun transgender-zijn zien als een persoonlijk verhaal of ervaring in plaats van een identiteit op zich en beschouwen hun genderidentiteit als gewoon vrouwelijk, mannelijk of non-binair. Of ze kunnen zich specifiek identificeren als trans, een transvrouw of een transman.
 
+\bigskip
+
 \noindent\fbox{%
     \parbox{\textwidth}{%
 \textbf{Houdingen die kwetsend zijn voor intersekse mensen}
 
 \begin{itemize}
+\setlength\itemsep{0em}
 \item Leven in een wereld die de lichamelijke anatomie van intersekse mensen niet erkent en deze mensen ook geen mensenrechten geeft.
 \item Het verwijderen van geslachtskenmerken door niet-consensuele genitale chirurgie in de kindertijd en het toedienen van hormonen om intersekse kinderen een meer vrouwelijk of mannelijk uiterlijk te geven. 
 \item Sociale schaamte en stigmatisering over het menselijk lichaam in het onderwijs, de gezondheidszorg, sport, werk en andere instellingen. 
@@ -605,7 +621,7 @@ Trans en gender divers zijn overkoepelende termen om mensen te omschrijven die z
     }%
 }
 
-\smallskip
+\bigskip
 
 De term ‘gender divers’ omvat allerlei verschillende manieren waarop gender ervaren kan worden. Iemand kan zich identificeren als transgender of twijfelen over het gender. Gender divers zijn eveneens mensen die zich noch als man noch als vrouw identificeren, zoals bij non-binaire mensen of bij degenen bij wie het gender meer een spectrum is. Termen die sommigen gebruiken om het spectrum van hun gender te omschrijven omvatten genderfluide, genderqueer en gender non-conform. 
 
@@ -613,7 +629,7 @@ De term ‘gender divers’ omvat allerlei verschillende manieren waarop gender 
 
 Er is sprake van transitie of genderbevestiging zodra iemand stappen onderneemt om zich sociaal of fysiek meer in lijn met hun genderidentiteit te kunnen voelen. Het is een persoonlijk proces wat maakt dat je in de maatschappij kunt leven met het gender wat voor jouw gevoel klopt.
 
-Er worden sociale, medische, chirurgische en juridische stappen ondernomen om het gender van een persoon te bevestigen. Transitie betekent niet dat iemand ‘van gender verandert’ of ‘een geslachtsverandering ondergaat’ of een man of vrouw ‘wordt’ -  nee, ze bevestigen het gender dat ze altijd al hadden. De reis van elke trans persoon is anders. Er bestaat niet een ‘volbrachte transitie’ en ieders transitie is op diens eigen manier compleet, los van uiterlijk, documenten, hormonen of chirurgie.  
+Er worden sociale, medische, chirurgische en juridische stappen ondernomen om het gender van een persoon te bevestigen. Transitie betekent niet dat iemand ‘van gender verandert’ of ‘een geslachtsverandering ondergaat’ of een man of vrouw ‘wordt’— nee, ze bevestigen het gender dat ze altijd al hadden. De reis van elke trans persoon is anders. Er bestaat niet een ‘volbrachte transitie’ en ieders transitie is op diens eigen manier compleet, los van uiterlijk, documenten, hormonen of chirurgie.  
 
 Het process van transitie staat niet gelijk aan identificeren als trans. Sommige mensen die in transitie zijn kunnen zich identificeren als trans, maar anderen zullen zich simpelweg als man of vrouw identificeren.  
 
@@ -644,7 +660,7 @@ Gender en seksualiteit zijn twee verschillende dingen. Gender is hoe we ons tot 
 
 \medskip
 
-Cisseksisme/cisgenderisme is een discriminerende sociale mening die claimt dat de transgender ervaring niet bestaat. Deze pijnlijke opvatting houdt in dat alleen binaire identiteiten (mannelijk of vrouwelijk) waardevol of echt zijn en dat genderidentiteit vastligt bij geboorte en uitsluitend gebaseerd is op geslachtskenmerken 
+Cisseksisme/cisgenderisme is een discriminerende sociale mening die claimt dat de transgender ervaring niet bestaat. Deze pijnlijke opvatting houdt in dat alleen binaire identiteiten (mannelijk of vrouwelijk) waardevol of echt zijn en dat genderidentiteit vastligt bij geboorte en uitsluitend gebaseerd is op geslachtskenmerken. 
 
 Misgenderen is het beschrijven of aanspreken van een persoon met behulp van woorden die niet overeenkomen met hun genderidentiteit. Dit gaat over onjuist gebruik van voornaamwoorden (zij, hij, hun), familietitels (vader, zus, oom) en andere woorden die van oudsher gegendered worden gebruikt, zoals stoer, schattig, enzovoort. 
   
@@ -727,7 +743,9 @@ Contributor: Letty \\
 Project management and design: Kerry Klinner, megacitydesign.com \\
 Editor: Simone Ford \\
 Proofreader: Bronwyn Sweeney
-\medskip \\
+
+\bigskip
+
 \textbf{Nederlandstalige uitgave 2022:}  \\
 Vertaler: Anoniem \\
 Proeflezer: Marein Könings \\
@@ -736,12 +754,9 @@ Formattering van de gedrukte uitgave: Remy Jakobson
 \end{center}
 }
 
-
-
-
 \newgeometry{margin=0px}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \makebox[0pt]{%
     \includegraphics[width=\paperwidth]{back}}
