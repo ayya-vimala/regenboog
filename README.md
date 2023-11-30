@@ -8,7 +8,7 @@ La communauté bouddhiste LGBTQIA+ Rainbodhi a créé ce livret pour aider à re
 
 # Darle la bienvenida al arcoíris
 
-La comunidad budista LGBTQIA+ Rainbodhi ha creado este folleto para ayudar a que los templos, monasterios y organizaciones budistas sean seguros y acogedores para las personas LGBTQIA+, de modo que puedan sentirse seguras y bienvenidas en ellos.
+La Comunidad Budista LGBTQIA+ Rainbodhi creó este librillo para proporcionar consejos prácticos sobre cómo ayudar a que los templos, monasterios y organizaciones budistas sean espacios seguros e inclusivos para les budistas LGBTQIA+.
 
 This work is created under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
